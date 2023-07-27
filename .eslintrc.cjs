@@ -22,6 +22,9 @@ module.exports = {
     project: true,
     tsconfigRootDir: __dirname
   },
+  env: {
+    node: true,
+  },
   plugins: ["@typescript-eslint"],
   root: true,
   rules: {
