@@ -13,9 +13,7 @@ const MONTHS = [
   'December',
 ];
 
-export function monthFromDate(date: any) {
-  if (!(date instanceof Date)) {
-    date = new Date(date);
-  }
-  return MONTHS[date.getMonth()];
+export function monthFromDate(date: string): string | undefined {
+  const _date = new Date(date);
+  return MONTHS[_date.getMonth()];
 }
