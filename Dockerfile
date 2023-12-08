@@ -7,7 +7,7 @@ RUN mv node_modules modules
 RUN yarn install
 COPY tsconfig.json .
 COPY src ./src
-RUN yarn run build:tsc --sourceMap false
+RUN yarn run build:tsc --sourceMap false --declaration false
 
 FROM node:20.10.0-alpine
 WORKDIR /app
