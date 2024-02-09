@@ -1,0 +1,10 @@
+version: '3'
+services:
+  esm-typescript:
+    image: pojono/esm-typescript:${DOCKER_TAG}
+#   image: cr.yandex/01234567890123456789/esm-typescript:${DOCKER_TAG}
+#   image: account.xxx.ecr.region.amazonaws.com/esm-typescript:${DOCKER_TAG}
+    container_name: esm-typescript
+    environment:
+      - DOCKER_TAG=${DOCKER_TAG}
+    restart: always

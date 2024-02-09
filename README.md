@@ -26,6 +26,6 @@ docker run --rm -it --entrypoint=/bin/sh esm:latest
 ``
 
 ## TODO:
-* Add docker-compose.yml
+* Add config
 * Add GitHub Actions
 * Add unit test example
