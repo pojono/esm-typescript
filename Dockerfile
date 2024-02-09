@@ -1,4 +1,4 @@
-FROM node:20.10.0-alpine as builder
+FROM node:20.11.0-alpine as builder
 WORKDIR /app
 COPY package.json .
 COPY yarn.lock .
@@ -9,7 +9,7 @@ COPY tsconfig.json .
 COPY src ./src
 RUN yarn run build:tsc --sourceMap false --declaration false
 
-FROM node:20.10.0-alpine
+FROM node:20.11.0-alpine
 WORKDIR /app
 COPY --from=builder /app/modules /app/node_modules
 COPY --from=builder /app/dist/ /app/

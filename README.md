@@ -1,5 +1,12 @@
 # Base project for TypeScript server
 
+Updating node.js:
+``
+fnm install 20.11.0
+fnm default 20.11.0
+npm i -g yarn
+``
+
 To upgrade dependencies run:
 
 ``
