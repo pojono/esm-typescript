@@ -2,8 +2,8 @@
 
 Updating node.js:
 ``
-fnm install 20.11.0
-fnm default 20.11.0
+fnm install 22.13.1
+fnm default 22.13.1
 npm i -g yarn
 ``
 
@@ -28,4 +28,3 @@ docker run --rm -it --entrypoint=/bin/sh esm:latest
 ## TODO:
 * Add config
 * Add GitHub Actions
-* Add unit test example
