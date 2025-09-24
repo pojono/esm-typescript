@@ -9,6 +9,6 @@ describe('Month', () => {
   });
 
   it('should be ok', () => {
-    assert.strictEqual(2, 2);
+    assert.strictEqual(3, 3);
   });
 });
