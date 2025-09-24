@@ -1,22 +1,35 @@
 {
-  "$schema": "https://json.schemastore.org/swcrc",
   "sourceMaps": true,
   "module": {
-    "type": "es6"
+    "type": "es6",
+    "strict": true,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
   },
   "jsc": {
-    "target": "es2020",
+    "target": "es2022",
+    "loose": false,
+    "externalHelpers": false,
+    "keepClassNames": true,
+    "preserveAllComments": false,
     "parser": {
       "syntax": "typescript",
+      "tsx": false,
       "decorators": true,
-      "dynamicImport": false
+      "dynamicImport": true
     },
     "transform": {
       "legacyDecorator": false,
-      "decoratorMetadata": true
+      "decoratorMetadata": true,
+      "useDefineForClassFields": true,
+      "react": {
+        "runtime": "automatic"
+      }
     },
-    "keepClassNames": false,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {}
   },
-  "minify": true
+  "minify": false,
+  "isModule": true
 }

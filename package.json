@@ -4,30 +4,39 @@
   "license": "MIT",
   "description": "",
   "engines": {
-    "node": ">=22.13.1"
+    "node": ">=22.19.0"
   },
   "scripts": {
-    "lint:fix": "eslint --ignore-pattern 'dist/' --fix --cache --max-warnings 0",
-    "lint": "eslint --ignore-pattern 'dist/' --max-warnings 0",
+    "dev": "tsx watch src/app.ts",
+    "build": "yarn build:tsc",
     "build:tsc": "tsc",
     "build:swc": "swc --out-dir dist src",
-    "test": "tsx --test",
-    "start": "node dist/app.js"
+    "start": "node dist/app.js",
+    "test": "tsx --test tests/**/*.test.ts",
+    "test:watch": "tsx --test --watch tests/**/*.test.ts",
+    "lint": "eslint --ignore-pattern 'dist/' --max-warnings 0",
+    "lint:fix": "eslint --ignore-pattern 'dist/' --fix --cache --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prebuild": "yarn clean",
+    "ci": "yarn type-check && yarn lint && yarn format:check && yarn test && yarn build"
   },
   "type": "module",
   "dependencies": {},
   "devDependencies": {
-    "@eslint/js": "9.19.0",
-    "@swc/cli": "0.6.0",
-    "@swc/core": "1.10.12",
-    "@types/node": "22.13.0",
-    "eslint": "9.19.0",
-    "eslint-config-prettier": "10.0.1",
-    "eslint-plugin-prettier": "5.2.3",
-    "globals": "^15.14.0",
-    "prettier": "3.4.2",
-    "tsx": "4.19.2",
-    "typescript": "5.7.3",
-    "typescript-eslint": "8.23.0"
+    "@eslint/js": "9.36.0",
+    "@swc/cli": "0.7.8",
+    "@swc/core": "1.13.5",
+    "@types/node": "20.17.9",
+    "eslint": "9.36.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "globals": "16.4.0",
+    "prettier": "3.6.2",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.44.1"
   }
 }

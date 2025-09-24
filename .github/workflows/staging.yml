@@ -26,16 +26,13 @@ name: Deploy
 
 on:
   push:
-    branches: [ "staging" ]
+    branches: ['staging']
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Login to Yandex Cloud Container Registry
         id: login-cr
         uses: yc-actions/yc-cr-login@v1
