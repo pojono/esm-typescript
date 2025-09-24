@@ -15,5 +15,6 @@ const MONTHS = [
 
 export function monthFromDate(date: string): string | undefined {
   const _date = new Date(date);
+  console.log(_date);
   return MONTHS[_date.getMonth()];
 }
