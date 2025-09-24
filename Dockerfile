@@ -14,7 +14,7 @@ COPY .prettierrc.json .
 COPY .prettierignore .
 COPY .swcrc .
 
-RUN yarn run ci
+RUN yarn build
 
 FROM node:24.8.0-alpine
 WORKDIR /app
