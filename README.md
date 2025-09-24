@@ -5,7 +5,7 @@ A modern, up-to-date TypeScript project with ESM modules, comprehensive tooling,
 ## 🚀 Features
 
 - **TypeScript 5.9.2** with strict configuration
-- **ESM modules** with Node.js 22+ support
+- **ESM modules** with Node.js 24+ support
 - **Dual build system**: TypeScript Compiler (tsc) and SWC for fast builds
 - **Modern linting**: ESLint 9.x with flat config and TypeScript integration
 - **Code formatting**: Prettier with WebStorm/IDE compatibility
@@ -14,15 +14,15 @@ A modern, up-to-date TypeScript project with ESM modules, comprehensive tooling,
 
 ## 📋 Prerequisites
 
-- Node.js 22.19.0+ (use fnm for version management)
+- Node.js 24.8.0+ (use fnm for version management)
 - Yarn package manager
 
 ### Setting up Node.js
 
 ```bash
-# Install and use Node.js 22
-fnm install 22
-fnm use 22
+# Install and use Node.js 24
+fnm install 24.8.0
+fnm use 24.8.0
 
 # Install Yarn globally (if needed)
 npm i -g yarn
@@ -107,9 +107,11 @@ docker-compose up
 ## 📦 Dependencies
 
 ### Runtime Dependencies
+
 - None (pure Node.js application)
 
 ### Development Dependencies
+
 - **TypeScript & Types**: `typescript`, `@types/node`
 - **Build Tools**: `@swc/core`, `@swc/cli`, `tsx`
 - **Linting**: `eslint`, `typescript-eslint`, `@eslint/js`
