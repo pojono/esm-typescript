@@ -1,15 +1,22 @@
-FROM node:20.11.0-alpine as builder
+FROM node:24.8.0-alpine as builder
 WORKDIR /app
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --production
 RUN mv node_modules modules
 RUN yarn install
-COPY tsconfig.json .
-COPY src ./src
-RUN yarn run build:tsc --sourceMap false --declaration false
 
-FROM node:20.11.0-alpine
+COPY src ./src
+COPY tests ./tests
+COPY tsconfig.json .
+COPY eslint.config.js .
+COPY .prettierrc.json .
+COPY .prettierignore .
+COPY .swcrc .
+
+RUN yarn run ci
+
+FROM node:24.8.0-alpine
 WORKDIR /app
 COPY --from=builder /app/modules /app/node_modules
 COPY --from=builder /app/dist/ /app/

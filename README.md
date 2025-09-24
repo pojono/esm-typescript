@@ -104,11 +104,19 @@ docker run --rm -it --entrypoint=/bin/sh esm:latest
 docker-compose up
 ```
 
+### GitHub Container Registry
+
+Docker images are automatically built and pushed to GitHub Container Registry on every push to master:
+
+- **Registry**: `ghcr.io/ichulkov/esm-typescript`
+- **Tags**: `latest`, `master-<sha>`, branch names
+- **Pull**: `docker pull ghcr.io/ichulkov/esm-typescript:latest`
+
 ## 📦 Dependencies
 
 ### Runtime Dependencies
 
-- None (pure Node.js application)
+- **express**: `^5.1.0` - Web framework
 
 ### Development Dependencies
 

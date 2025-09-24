@@ -11,6 +11,7 @@
     "build": "yarn build:tsc",
     "build:tsc": "tsc",
     "build:swc": "swc --out-dir dist src",
+    "docker:build": "docker build -t esm:latest .",
     "start": "node dist/app.js",
     "test": "tsx --test tests/**/*.test.ts",
     "test:watch": "tsx --test --watch tests/**/*.test.ts",
@@ -24,7 +25,9 @@
     "ci": "yarn type-check && yarn lint && yarn format:check && yarn test && yarn build"
   },
   "type": "module",
-  "dependencies": {},
+  "dependencies": {
+    "express": "5.1.0"
+  },
   "devDependencies": {
     "@eslint/js": "9.36.0",
     "@swc/cli": "0.7.8",
